@@ -30,11 +30,8 @@ RUN pip --no-cache-dir install \
         numpy \
         scipy \
         sklearn \
-        skimage \
-        matplotlib \
-        && \
-    python -m ipykernel.kernelspec
+        scikit-image \
+        matplotlib
 
-# Install pytorch GPU version.
-RUN pip install  --no-cache-dir https://s3.amazonaws.com/pytorch/whl/cu80/torch-0.1.6.post22-cp35-cp35m-linux_x86_64.whl
-RUN pip install  --no-cache-dir torchvision
+RUN pip install https://s3.amazonaws.com/pytorch/whl/cu80/torch-0.1.7.post2-cp35-cp35m-linux_x86_64.whl
+RUN pip install torchvision
